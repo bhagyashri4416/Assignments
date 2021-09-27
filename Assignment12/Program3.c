@@ -10,13 +10,13 @@
 #include <stdio.h>
 void Pattern(int iRow, int iCol)
 {
-    int rowCnt = 0;
-    int colCnt = 0;
+    int i = 0;
+    int j = 0;
 
-    for (rowCnt = 1; rowCnt <= iRow; rowCnt++)
+    for (i = 1; i <= iRow; i++)
     {
-        for (colCnt = 1; colCnt <= iCol; colCnt++)
-            if (rowCnt == colCnt)
+        for (j = 1; j <= iCol; j++)
+            if (i == j)
             {
                 printf("$\t");
             }
