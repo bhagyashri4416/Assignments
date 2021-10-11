@@ -1,33 +1,36 @@
-// 5. Write a program which accept string from user and copy that
-// characters of that string into another string by toggling the case.
-// Input :   "Marvellous Python 2"
-// Output :   "mARVELLOUS pYTHON 2"
+// 1. Write a program which accept string from user and copy that
+// characters of that string into another string in reverse order.
+// Input :   “Marvellous Python”
+// Output :   “nohtyP suollevraM”
 
-#include<stdio.h>
+#include <stdio.h>
 
-void StrCpyToggle(char *src, char *dest)
+void StrCpyRev(char *src, char *dest)
 {
-    while (*src != '\0')
+    int i, j = 0, Length = 0;
+    char temp;
+    i = 0;
+    while (src[i] != '\0')
     {
-        if ((*src >= 'A') && (*src <= 'Z'))
-        {
-            *src = *src + 32;
-        }
-        else
-        {
-            *src = *src - 32;
-        }
-        *dest = *src;
-        src++;
-        dest++;
+        Length++;
+        i++;
     }
-    printf("%s", dest); // Marvellous Multi OS
+
+    j = Length - 1;
+    printf("%d", Length);
+    printf("%d", j);
+
+    for (i = 0; src[i] < Length; i++)
+    {
+        dest[i] = src[j];
+        j--;
+    }
+    printf("\nString After Reverse: %s", dest);
 }
 int main()
 {
-    char arr[30] = "Marvellous Python 2";
+    char arr[30] = "Marvellous Python";
     char brr[30]; // Empty string
-    StrCpyToggle(arr, brr);
-    // prnitf("%s", brr); // mARVELLOUS pYTHON 2
+    StrCpyRev(arr, brr);
     return 0;
 }
